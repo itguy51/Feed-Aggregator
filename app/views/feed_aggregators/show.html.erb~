@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+
+<div style="padding-left:15px">
+<span style="font-size:22px"><%=@feed_aggregator.title%></span>
+<br />
+<%=raw $feedhtml %>
+</div>
+
+<p>
+  <b>Description:</b>
+  <%= @feed_aggregator.desc %>
+</p>
+
+<p>
+  <b>Feeds:</b>
+  <ul>
+  <%
+  feeds = @feed_aggregator.feeds.split("\n")
+  feeds.each do |feedurl|
+  %>
+  <li><%=feedurl%></li>
+  <%end%>
+  </ul>
+</p>
+
+
+
+
+
+
+
+
+
+<%= link_to 'Edit', edit_feed_aggregator_path(@feed_aggregator) %> |
+<%= link_to 'Back', feed_aggregators_path %>

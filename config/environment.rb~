@@ -1,0 +1,10 @@
+# Load the rails application
+require File.expand_path('../application', __FILE__)
+
+# Initialize the rails application
+
+
+
+Mime::Type.register "text/html", :pdf
+
+Feeder::Application.initialize!

@@ -1,0 +1,24 @@
+<h1>Listing Feed Aggregators</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Desc</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @feed_aggregators.each do |feed_aggregator| %>
+  <tr>
+    <td><%= feed_aggregator.title %></td>
+    <td><%= feed_aggregator.desc %></td>
+    <td><%= link_to 'Show', feed_aggregator %></td>
+    <td><%= link_to 'Edit', edit_feed_aggregator_path(feed_aggregator) %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Feed aggregator', new_feed_aggregator_path %>

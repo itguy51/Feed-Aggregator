@@ -1,0 +1,31 @@
+<%= form_for(@feed_aggregator) do |f| %>
+  <% if @feed_aggregator.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@feed_aggregator.errors.count, "error") %> prohibited this feed_aggregator from being saved:</h2>
+
+      <ul>
+      <% @feed_aggregator.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :desc %><br />
+    <%= f.text_field :desc %>
+  </div>
+  <div class="field">
+    <%= f.label :feeds %><br />
+    <%= f.text_area(:feeds, "cols" => 130, "rows" => 8)%>
+    <br />
+    One Per Line
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

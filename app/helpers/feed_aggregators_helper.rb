@@ -1,0 +1,2 @@
+module FeedAggregatorsHelper
+end
